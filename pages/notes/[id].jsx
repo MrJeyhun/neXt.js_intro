@@ -1,19 +1,14 @@
-import React from 'react'
-import {useRouter} from "next/router"
-import Link from "next/link"
+/** @jsx jsx */
+import { jsx } from 'theme-ui'
+import { useRouter } from 'next/router'
 
-export default function NotePage() {
-    const router = useRouter();
-    const {id} = router.query;
+export default () => {
+  const router = useRouter()
+  const { id }= router.query
 
-    return (
-        <div>
-            <div>Note: {id}</div>
-            <div>
-                <button onClick={e => router.push("/")}>
-                    Go home
-                </button>
-            </div>
-        </div>
-    )
+  return (
+    <div sx={{variant: 'containers.page'}}>
+      <h1>Note: {id} </h1>
+    </div>
+  )
 }
