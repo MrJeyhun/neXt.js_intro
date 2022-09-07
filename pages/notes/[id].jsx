@@ -13,7 +13,7 @@ export default ({note}) => {
 
 //FIXME: Cannot set headers after they are sent to the client =>> id: Date.now() + i in data.js ???
 export async function getServerSideProps({params, req, res}) {
-  const response = await fetch(`http://localhost:3000/api/note/${params.id}`)
+  const response = await fetch(`${process.env.API_URL}/api/note/${params.id}`)
   console.log(response)
   // so much power!
   if (!response.ok) {
